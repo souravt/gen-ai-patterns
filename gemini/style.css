@@ -1,0 +1,140 @@
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.flashcard-container {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    perspective: 1000px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.flashcard.flipped {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
+    justify-content: flex-start; /* Align content to the start */
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #e0f2f1, #b2dfdb);
+    padding: 20px; /* Added padding to the card */
+}
+
+.front {
+    z-index: 2;
+    /* Slightly darker gradient for the front */
+    background: linear-gradient(135deg, #b2dfdb, #39c6b9);
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+.back {
+    transform: rotateY(180deg);
+    text-align: left;
+    background-color: #f8f8f8;
+    overflow-y: auto; /* Added scroll for long content */
+}
+
+.pattern-name {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #2e7d32;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Added spacing below pattern name */
+}
+
+/* Styles for the detail sections */
+.detail-section {
+    margin-bottom: 15px; /* Spacing between detail sections */
+    width: 100%; /* Full width for detail sections */
+}
+
+.detail-header {
+    font-size: 18px;
+    font-weight: bold;
+    /* Added colorful headings */
+    color: #007bff; /* Blue for "What it is" */
+    margin-bottom: 5px;
+}
+
+.detail-header.why-matters {
+    color: #4caf50; /* Green for "Why it matters" */
+}
+
+.detail-header.best-practices {
+    color: #ff9800; /* Orange for "Best Practices" */
+}
+
+.detail-header.applications {
+    color: #e91e63; /* Pink for "Applications" */
+}
+
+.detail-text {
+    font-size: 16px;
+    color: #333;
+}
+
+.navigation {
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the navigation buttons */
+    gap: 20px; /* Add space between the buttons and the card number */
+}
+
+.navigation button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.navigation button:hover {
+    background-color: #0056b3;
+}
+
+.navigation button:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+}
+
+#current-card-number {
+    margin: 0 10px; /* Add spacing around the card number */
+}

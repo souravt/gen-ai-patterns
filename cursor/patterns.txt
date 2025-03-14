@@ -1,0 +1,7 @@
+Paste your patterns here in this format:
+
+Pattern Name:
+What it is:
+Why it matters:
+Best Practices:
+Applications: 
