@@ -6,14 +6,8 @@
 
 ### Use Case
 
+Code using LLMs.
 
-### Capabilities
+First one using Claude :
 
-
-### Experience
-
-#### Claude
-
-#### Cursor
-
-#### Gemini
+![Gen AI Patterns](https://github.com/souravt/gen-ai-patterns/blob/main/claude/Screenshot%202025-03-14%20at%205.27.17%20PM.png)
